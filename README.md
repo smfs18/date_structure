@@ -8,6 +8,7 @@ Este repositório contém implementações de diversas estruturas de dados em C+
 - **Pilhas**
 - **Arrays**
 - **Listas**
+- **Tabela Hash**
 
 ## Requisitos
 
