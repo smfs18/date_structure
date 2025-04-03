@@ -1,7 +1,6 @@
 # 🧬 Genome Block Counter - Análise de Sequências de DNA
 
 ![C++](https://img.shields.io/badge/C++-17-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
 ![Platform](https://img.shields.io/badge/Platform-Linux%20|%20macOS%20|%20WSL-lightgrey)
 
 ## 📋 Descrição
