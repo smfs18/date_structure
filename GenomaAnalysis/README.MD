@@ -1,105 +1,114 @@
-🧬 Genome Block Counter
-Um projeto em C++ para análise de sequências de DNA, contando a ocorrência de blocos de 6 bases nitrogenadas (A, T, C, G) em entradas fornecidas pelo usuário.
+# 🧬 Genome Block Counter
 
-📥 Entrada do Programa
-O programa solicita 60 strings de 6 caracteres cada, representando blocos de DNA:
+![C++](https://img.shields.io/badge/C++-17-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Platform](https://img.shields.io/badge/Platform-Linux%20|%20macOS%20|%20WSL-lightgrey)
 
-Formato de Entrada
-Cada bloco deve conter exatamente 6 caracteres
+## 📋 Descrição do Projeto
 
-Caracteres válidos: A, T, C, G (maiúsculos)
+Projeto em C++ que implementa um contador de blocos genômicos utilizando tabela hash manual para análise de sequências de DNA. Processa entradas do usuário e gera relatórios de ocorrências de padrões de 6 bases nitrogenadas.
 
-Exemplo de entrada válida:
+## 🛠️ Funcionalidades Principais
 
-Copy
-Bloco 1: ATTAAA  
-Bloco 2: AGGTTT  
-Bloco 3: CTTAGG  
-...  
-Bloco 60: TAGATC  
-Validação Automática
-O programa rejeita entradas incorretas e solicita correção:
+- **Contagem precisa** de blocos de 6 bases (A, T, C, G)
+- **Validação rigorosa** de entrada
+- **Tabela hash otimizada** com tratamento de colisões
+- **Saída formatada** para fácil interpretação
 
-❌ Tamanho diferente de 6 caracteres (ex.: ATTA)
+## 📥 Entrada do Programa
 
-❌ Caracteres inválidos (ex.: ATTAAX).
+### Formato Requerido
+- 60 strings de exatamente 6 caracteres cada
+- Caracteres válidos: `A`, `T`, `C`, `G` (maiúsculos)
 
-📤 Saída do Programa
-Após processar os 60 blocos, o programa exibe um relatório detalhado:
+### Exemplo de Entrada Válida
+```text
+ATTAAA
+AGGTTT
+CTACGT
+...
+TAGATC
 
-Formato de Saída
-plaintext
-Copy
+## Fluxo de Interação
+
+> Digite 60 blocos de 6 caracteres cada (A/T/C/G):
+Bloco 1: ATTAAA
+Bloco 2: AGGTTT
+...
+Bloco 60: TAGATC
+
+### 📤 Saída do Programa
+
+## Formato de Resultado
+
 -----------------------------
 Bloco      Ocorrências
 -----------------------------
 ATTAAA     3
 AGGTTT     5
 ATACCT     2
-...        ...
+...
 TAGATC     1
 -----------------------------
-Características da Saída
-✔ Blocos únicos: Lista cada padrão distinto de 6 bases.
-✔ Contagem precisa: Mostra quantas vezes cada bloco apareceu.
-✔ Ordenação: Organizado pela posição na tabela hash (não alfabética).
 
-🛠 Como Executar
-Compilação
-Certifique-se de ter make e g++ instalados.
+## Características da Saída
 
-No terminal, navegue até a pasta do projeto e execute:
+-Listagem de todos os blocos únicos
 
-make
+-Contagem exata de ocorrências
+
+-Ordenação por posição na tabela hash
+
+### 🚀 Instalação e Execução
+
+## Pré-requisitos
+
+-Compilador C++17 (g++ ≥ 7 ou clang++)
+
+-Sistema Unix-like (Linux/macOS/WSL)
+
+## Compilação
+
+make clean && make
+
+## Execução
+
 ./genome_analysis
-Siga as instruções para inserir os 60 blocos.
 
-Os resultados serão exibidos automaticamente no terminal.
 
-📂 Estrutura do Projeto
-plaintext
-Copy
+### 🏗️ Arquitetura do Projeto
+
 GenomeAnalysis/
-├── include/          # Cabeçalhos (.h)
-│   ├── HashNode.h
-│   ├── GenomeHashTable.h
-│   └── ...
-├── src/             # Código-fonte (.cpp)
+├── include/
+│   ├── HashNode.h        # Estrutura do nó da hash
+│   ├── GenomeHashTable.h # Implementação da tabela
+│   ├── GenomeProcessor.h # Lógica principal
+│   └── constants.h       # Constantes globais
+├── src/
 │   ├── HashNode.cpp
 │   ├── GenomeHashTable.cpp
-│   └── ...
-├── Makefile         # Script de compilação
-└── README.md        # Documentação
-❓ Por Que Usar Este Projeto?
-✅ Eficiência: Implementação manual de tabela hash para processamento rápido.
+│   ├── GenomeProcessor.cpp
+│   └── main.cpp          # Ponto de entrada
+├── Makefile              # Script de build
+└── README.md             # Documentação
 
-✅ Modularização: Código organizado em classes bem definidas.
+### 📝 Exemplo Completo
 
-✅ Validação Robustas: Garante entradas corretas para análise precisa.
+## Entrada do Usuário
 
-✅ Portável: Funciona em Linux, macOS e WSL (Windows).
-
-📄 Exemplo Completo
-Entrada do Usuário
-plaintext
-Copy
-Bloco 1: ATTAAA
-Bloco 2: AGGTTT
-Bloco 3: ATTAAA
+ATTAAA
+AGGTTT
+ATTAAA
+CTACGT
 ...
-Bloco 60: AGGTTT
-Saída Gerada
-plaintext
-Copy
+AGGTTT
+
+## Saída Gerada
+
 -----------------------------
 Bloco      Ocorrências
 -----------------------------
 ATTAAA     2
 AGGTTT     3
-CTTGGC     1
-...        ...
+CTACGT     1
 -----------------------------
-🔍 Requisitos
-Compilador C++17 (ex.: g++ versão 7+)
-
-Sistema Unix-like (Linux/macOS/WSL)
