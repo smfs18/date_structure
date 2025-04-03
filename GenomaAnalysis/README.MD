@@ -21,7 +21,7 @@ Projeto em C++ que implementa um contador de blocos genômicos utilizando tabela
 - Caracteres válidos: `A`, `T`, `C`, `G` (maiúsculos)
 
 ### Exemplo de Entrada Válida
-```text
+
 ATTAAA
 AGGTTT
 CTACGT
